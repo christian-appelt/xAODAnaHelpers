@@ -8,6 +8,7 @@
 #include <AsgTools/AnaToolHandle.h>
 #include <AsgAnalysisInterfaces/IPileupReweightingTool.h>
 #include <MuonAnalysisInterfaces/IMuonCalibrationAndSmearingTool.h>
+#include "MuonMomentumCorrections/MuonCalibTool.h"
 
 class MuonCalibrator : public xAH::Algorithm
 {
@@ -60,7 +61,7 @@ private:
   std::vector<CP::SystematicSet> m_systList; //!
 
   // tools
-  asg::AnaToolHandle<CP::IMuonCalibrationAndSmearingTool> m_muonCalibrationTool_handle{"CP::MuonCalibrationPeriodTool/MuonCalibrationAndSmearingTool", this}; //!
+  asg::AnaToolHandle<CP::IMuonCalibrationAndSmearingTool> m_muonCalibrationTool_handle{"CP::MuonCalibTool/MuonCalibrationAndSmearingTool", this}; //!
 
   // variables that don't get filled at submission time should be
   // protected from being send from the submission node to the worker
